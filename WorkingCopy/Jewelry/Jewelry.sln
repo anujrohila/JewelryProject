@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jewelry.Win8.Phone", "Jewel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jewelry.Web.App", "Jewelry.Web.App\Jewelry.Web.App.csproj", "{26E6C32A-E90A-4EE0-99A1-4977C820BF23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jewelry.Win8.Phone.Demo", "Jewelry.Win8.Phone.Demo\Jewelry.Win8.Phone.Demo.csproj", "{62164FE9-D547-418C-829C-094999B7BBA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,24 @@ Global
 		{26E6C32A-E90A-4EE0-99A1-4977C820BF23}.Release|Any CPU.Build.0 = Release|Any CPU
 		{26E6C32A-E90A-4EE0-99A1-4977C820BF23}.Release|ARM.ActiveCfg = Release|Any CPU
 		{26E6C32A-E90A-4EE0-99A1-4977C820BF23}.Release|x86.ActiveCfg = Release|Any CPU
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Debug|ARM.ActiveCfg = Debug|ARM
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Debug|ARM.Build.0 = Debug|ARM
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Debug|ARM.Deploy.0 = Debug|ARM
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Debug|x86.ActiveCfg = Debug|x86
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Debug|x86.Build.0 = Debug|x86
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Debug|x86.Deploy.0 = Debug|x86
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Release|ARM.ActiveCfg = Release|ARM
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Release|ARM.Build.0 = Release|ARM
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Release|ARM.Deploy.0 = Release|ARM
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Release|x86.ActiveCfg = Release|x86
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Release|x86.Build.0 = Release|x86
+		{62164FE9-D547-418C-829C-094999B7BBA7}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
