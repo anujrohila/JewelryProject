@@ -15,48 +15,28 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <!-- LOCALIZATION NOTE:
-            To localize the displayed strings copy their values to appropriately named
-            keys in the app's neutral language resource file (AppResources.resx) then
-            replace the hard-coded text value between the attributes' quotation marks
-            with the binding clause whose path points to that string name.
-
-            For example:
-
-                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
-
-            This binding points to the template's string resource named "ApplicationTitle".
-
-            Adding supported languages in the Project Properties tab will create a
-            new resx file per language that can carry the translated values of your
-            UI strings. The binding in these examples will cause the value of the
-            attributes to be drawn from the .resx file that matches the
-            CurrentUICulture of the app at run time.
-         -->
-
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
-
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
-        </Grid>
-
-        <!--Uncomment to see an alignment grid to help ensure your controls are
-            aligned on common boundaries.  The image has a top margin of -32px to
-            account for the System Tray. Set this to 0 (or remove the margin altogether)
-            if the System Tray is hidden.
-
-            Before shipping remove this XAML and the image itself.-->
-        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+        <!--<StackPanel x:Name="canvasPoint" Orientation="Horizontal" >
+            <Border Width="10" Background="Red"  Height="10" CornerRadius="100" Margin="0,0,-2,0"></Border>
+            <Rectangle Width="100" Height="2" Fill="Red"></Rectangle>
+            <Border Width="10" Background="Red"  Height="10" CornerRadius="100" Margin="-2,0,0,0"></Border>
+        </StackPanel>-->
+        <!--<Image Name="image1"  Stretch="Fill" Width="214" Source="/Document/7.jpg"  Margin="141,55,125,513" RenderTransformOrigin="0.276,-0.189" UseLayoutRounding="True" >
+            <Image.RenderTransform>
+                <CompositeTransform Rotation="-17.497"/>
+            </Image.RenderTransform>
+        </Image>-->
+        <Canvas x:Name="paint" Background="Gray"  Margin="0,0,0,138" >
+        </Canvas>
+        <Button x:Name="BtnClick" Content="Click !" Margin="100,658,55,10" Click="BtnClick_Click" />
+        <!--<Canvas x:Name="cnv" Margin="0,140,0,0">
+            <Rectangle Canvas.Top="150" Canvas.Left="45" 
+               Width="300" Height="40" x:Name="myrect" 
+               Fill="AliceBlue" 
+               ManipulationStarted="myrect_ManipulationStarted" 
+               ManipulationDelta="myrect_ManipulationDelta" 
+               ManipulationCompleted="myrect_ManipulationCompleted">
+            </Rectangle>
+        </Canvas>-->
     </Grid>
 
 </phone:PhoneApplicationPage>
