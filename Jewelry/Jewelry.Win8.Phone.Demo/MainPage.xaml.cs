@@ -37,14 +37,13 @@ namespace Jewelry.Win8.Phone.Demo
             //{
             //    Source = PictureDecoder.DecodeJpeg(img.GetImage())
             //};
-            if (img != null)
-                image1.Source = PictureDecoder.DecodeJpeg(img.GetImage());
-            string s = "";
+            //if (img != null)
+            //    image1.Source = PictureDecoder.DecodeJpeg(img.GetImage());
         }
 
         private void RemoveWhiteBack()
         {
-            Uri uri = new Uri("/Document/8.jpg", UriKind.RelativeOrAbsolute);
+            Uri uri = new Uri("/Document/9.jpg", UriKind.RelativeOrAbsolute);
             //BitmapImage bit = new BitmapImage(uri);
             //img1.Source = bit;
 
@@ -54,7 +53,6 @@ namespace Jewelry.Win8.Phone.Demo
             Canvas.SetTop(image, 0);
             Canvas.SetLeft(image, 0);
             paint.Children.Add(image);
-
         }
 
 
@@ -98,8 +96,8 @@ namespace Jewelry.Win8.Phone.Demo
             round1.Margin = new Thickness(0, 0, -2, 0);
             paint.Children.Add(round1);
 
-            Canvas.SetLeft(round1, 10);
-            Canvas.SetLeft(round1, 10);
+            Canvas.SetTop(round1, 100);
+            Canvas.SetLeft(round1, 100);
 
             //Rectangle rectLine = new Rectangle();
             //rectLine.Width = 100;
@@ -116,8 +114,8 @@ namespace Jewelry.Win8.Phone.Demo
             round2.Margin = new Thickness(0, 0, -2, 0);
             paint.Children.Add(round2);
 
-            Canvas.SetLeft(round2, 50);
-            Canvas.SetLeft(round2, 50);
+            Canvas.SetTop(round2, 150);
+            Canvas.SetLeft(round2, 150);
 
 
             round1.ManipulationDelta += new EventHandler<ManipulationDeltaEventArgs>(OnManipulationDelta);
@@ -253,27 +251,31 @@ namespace Jewelry.Win8.Phone.Demo
 
         private void BtnClick_Click(object sender, RoutedEventArgs e)
         {
+            Uri uri = new Uri("/Document/9.jpg", UriKind.RelativeOrAbsolute);
+            //BitmapImage bit = new BitmapImage(uri);
+            //img1.Source = bit;
+            var image = new Image();
+            image.Stretch = Stretch.Fill;
+            image.Source = new BitmapImage(uri);
+            Canvas.SetTop(image, 0);
+            Canvas.SetLeft(image, 0);
+            paint.Children.Add(image);
+
+
+
+
             var image1 = new Image();
             image1.Stretch = Stretch.Fill;
-            image1.Source = new BitmapImage(new Uri("/Document/1.png", UriKind.RelativeOrAbsolute));
+            image1.Source = new BitmapImage(new Uri("/Document/nec1.png", UriKind.RelativeOrAbsolute));
+
+            paint.Children.Remove(image1);
+
             image1.Width = PointX1 - PointX + ((PointX1 - PointX) / 8);
             Canvas.SetTop(image1, PointY);
             Canvas.SetLeft(image1, (PointX - ((PointX1 - PointX) / 15)));
-
-
-            //Duration Time_duration = new Duration(TimeSpan.FromSeconds(2));
-            //Storyboard MyStory = new Storyboard();
-            //MyStory.Duration = Time_duration;
-            //DoubleAnimation My_Double = new DoubleAnimation();
-            //My_Double.Duration = Time_duration;
-
             CompositeTransform MyTransform = new CompositeTransform();
             MyTransform.Rotation = (PointY1 - PointY) / 3;
-            //Storyboard.SetTarget(My_Double, MyTransform);
-            //Storyboard.SetTargetProperty(My_Double, new PropertyPath("Angle"));
             image1.RenderTransform = MyTransform;
-            //image1.RenderTransformOrigin = new Point(0.5, 0.5);
-
             paint.Children.Add(image1);
             image1.ManipulationDelta += new EventHandler<ManipulationDeltaEventArgs>(OnManipulationDelta2);
 
@@ -281,22 +283,50 @@ namespace Jewelry.Win8.Phone.Demo
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            WriteableBitmap wb = new WriteableBitmap(paint, null);
 
-            wb.Render(paint, new TranslateTransform());
-            wb.Invalidate();
-
-            using (MemoryStream stream = new MemoryStream())
+            Border b = new Border();
+            paint.Children.Remove(b);
+            for (int i = 1; i <= 6; i++)
             {
-                WriteableBitmap bitmap = new WriteableBitmap(paint, null);
-                bitmap.SaveJpeg(stream, bitmap.PixelWidth, bitmap.PixelHeight, 0, 100);
-                stream.Seek(0, SeekOrigin.Begin);
+                Uri uri = new Uri("/Document/9.jpg", UriKind.RelativeOrAbsolute);
+                var image = new Image();
+                image.Stretch = Stretch.Fill;
+                image.Source = new BitmapImage(uri);
+                Canvas.SetTop(image, 0);
+                Canvas.SetLeft(image, 0);
+                paint.Children.Add(image);
 
-                using (MediaLibrary mediaLibrary = new MediaLibrary())
+                var image1 = new Image();
+                image1.Stretch = Stretch.Fill;
+                image1.Source = new BitmapImage(new Uri("/Document/nec" + i.ToString() + ".png", UriKind.RelativeOrAbsolute));
+                image1.Width = PointX1 - PointX + ((PointX1 - PointX) / 8);
+                Canvas.SetTop(image1, PointY);
+                Canvas.SetLeft(image1, (PointX - ((PointX1 - PointX) / 15)));
+                CompositeTransform MyTransform = new CompositeTransform();
+                MyTransform.Rotation = (PointY1 - PointY) / 3;
+                image1.RenderTransform = MyTransform;
+                paint.Children.Add(image1);
+
+                WriteableBitmap wb = new WriteableBitmap(paint, null);
+
+                wb.Render(paint, new TranslateTransform());
+                wb.Invalidate();
+
+                using (MemoryStream stream = new MemoryStream())
                 {
-                    mediaLibrary.SavePicture("PictureJewelry.jpg", stream);
+                    WriteableBitmap bitmap = new WriteableBitmap(paint, null);
+                    bitmap.SaveJpeg(stream, bitmap.PixelWidth, bitmap.PixelHeight, 0, 100);
+                    stream.Seek(0, SeekOrigin.Begin);
+
+                    using (MediaLibrary mediaLibrary = new MediaLibrary())
+                    {
+                        mediaLibrary.SavePicture("PictureJewelry" + i.ToString() + ".jpg", stream);
+                    }
                 }
+                Image img = new Image();
+                paint.Children.Remove(img);
             }
+            
             //MessageBox.Show("Picture Saved...");
             //Stream st = new MemoryStream();
             //BitmapImage b = new BitmapImage();

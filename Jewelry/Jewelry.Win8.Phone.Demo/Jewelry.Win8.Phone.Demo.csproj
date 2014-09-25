@@ -164,6 +164,12 @@
     <Content Include="Document\7.jpg" />
     <Content Include="Document\8.jpg" />
     <Content Include="Document\9.jpg" />
+    <Content Include="Document\nec1.png" />
+    <Content Include="Document\nec6.png" />
+    <Content Include="Document\nec2.png" />
+    <Content Include="Document\nec3.png" />
+    <Content Include="Document\nec4.png" />
+    <Content Include="Document\nec5.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
