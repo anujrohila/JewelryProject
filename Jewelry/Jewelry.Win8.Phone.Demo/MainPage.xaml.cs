@@ -89,8 +89,8 @@ namespace Jewelry.Win8.Phone.Demo
 
 
             Border round1 = new Border();
-            round1.Width = 30;
-            round1.Height = 30;
+            round1.Width = 10;
+            round1.Height = 10;
             round1.Background = mySolidColorBrush;
             round1.CornerRadius = new CornerRadius(100);
             round1.Margin = new Thickness(0, 0, -2, 0);
@@ -107,8 +107,8 @@ namespace Jewelry.Win8.Phone.Demo
 
 
             Border round2 = new Border();
-            round2.Width = 30;
-            round2.Height = 30;
+            round2.Width = 10;
+            round2.Height = 10;
             round2.Background = mySolidColorBrush;
             round2.CornerRadius = new CornerRadius(100);
             round2.Margin = new Thickness(0, 0, -2, 0);
@@ -253,26 +253,24 @@ namespace Jewelry.Win8.Phone.Demo
             Uri uri = new Uri("/Document/9.jpg", UriKind.RelativeOrAbsolute);
             //BitmapImage bit = new BitmapImage(uri);
             //img1.Source = bit;
-            var image = new Image();
-            image.Stretch = Stretch.Fill;
-            image.Source = new BitmapImage(uri);
-            Canvas.SetTop(image, 0);
-            Canvas.SetLeft(image, 0);
-            paint.Children.Add(image);
-
-
+            //var image = new Image();
+            //image.Stretch = Stretch.Fill;
+            //image.Source = new BitmapImage(uri);
+            //Canvas.SetTop(image, 0);
+            //Canvas.SetLeft(image, 0);
+            //paint.Children.Add(image);
 
 
             var image1 = new Image();
             image1.Stretch = Stretch.Fill;
-            image1.Source = new BitmapImage(new Uri("/Document/nec1.png", UriKind.RelativeOrAbsolute));
+            image1.Source = new BitmapImage(new Uri("/Document/nec5.png", UriKind.RelativeOrAbsolute));
             paint.Children.Remove(image1);
-            image1.Width = PointX1 - PointX + ((PointX1 - PointX) / 8);
-            Canvas.SetTop(image1, PointY);
-            Canvas.SetLeft(image1, (PointX - ((PointX1 - PointX) / 15)));
-            CompositeTransform MyTransform = new CompositeTransform();
-            MyTransform.Rotation = (PointY1 - PointY) / 3;
-            image1.RenderTransform = MyTransform;
+            image1.Width = PointX1 - PointX + 10;
+            Canvas.SetTop(image1, PointY + 5);
+            Canvas.SetLeft(image1, PointX + 5);
+            //CompositeTransform MyTransform = new CompositeTransform();
+            //MyTransform.Rotation = (PointY1 - PointY) / 3;
+            //image1.RenderTransform = MyTransform;
             paint.Children.Add(image1);
             image1.ManipulationDelta += new EventHandler<ManipulationDeltaEventArgs>(OnManipulationDelta2);
 
@@ -296,12 +294,12 @@ namespace Jewelry.Win8.Phone.Demo
                 var image1 = new Image();
                 image1.Stretch = Stretch.Fill;
                 image1.Source = new BitmapImage(new Uri("/Document/nec" + i.ToString() + ".png", UriKind.RelativeOrAbsolute));
-                image1.Width = PointX1 - PointX + ((PointX1 - PointX) / 8);
-                Canvas.SetTop(image1, PointY);
-                Canvas.SetLeft(image1, (PointX - ((PointX1 - PointX) / 15)));
-                CompositeTransform MyTransform = new CompositeTransform();
-                MyTransform.Rotation = (PointY1 - PointY) / 3;
-                image1.RenderTransform = MyTransform;
+                image1.Width = PointX1 - PointX + 10;
+                Canvas.SetTop(image1, PointY + 5);
+                Canvas.SetLeft(image1, PointX + 5);
+                //CompositeTransform MyTransform = new CompositeTransform();
+                //MyTransform.Rotation = (PointY1 - PointY) / 3;
+                //image1.RenderTransform = MyTransform;
                 paint.Children.Add(image1);
 
                 WriteableBitmap wb = new WriteableBitmap(paint, null);
