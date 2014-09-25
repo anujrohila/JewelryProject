@@ -16,6 +16,7 @@ using Jewelry.Win8.Phone.Demo.Resources;
 using System.IO;
 using Microsoft.Xna.Framework.Media;
 using System.IO.IsolatedStorage;
+using Microsoft.Phone;
 
 namespace Jewelry.Win8.Phone.Demo
 {
@@ -32,7 +33,12 @@ namespace Jewelry.Win8.Phone.Demo
             Drawbox();
             MediaLibrary mediaLibrary = new MediaLibrary();
             Picture img = mediaLibrary.Pictures.Where(pic => pic.Name.Contains("PictureJewelry")).FirstOrDefault();
-            //image1 = img.;
+            //var imageToShow = new Image()
+            //{
+            //    Source = PictureDecoder.DecodeJpeg(img.GetImage())
+            //};
+            if (img != null)
+                image1.Source = PictureDecoder.DecodeJpeg(img.GetImage());
             string s = "";
         }
 

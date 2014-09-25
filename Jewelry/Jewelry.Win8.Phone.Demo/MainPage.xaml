@@ -26,10 +26,11 @@
             </Image.RenderTransform>
         </Image>-->
         <StackPanel>
-            <Canvas x:Name="paint" Background="Gray" Height="627"   >
+            <Canvas x:Name="paint" Background="Gray" Height="297"   >
             </Canvas>
             <Button x:Name="BtnClick" Content="Click !"  Click="BtnClick_Click" />
             <Button x:Name="BtnSave" Content="Save !" Click="BtnSave_Click"  />
+            <Image x:Name="image1" Source="/Document/5.jpg" Height="271" Margin="0,0,192,0" ></Image>
         </StackPanel>
 
 
