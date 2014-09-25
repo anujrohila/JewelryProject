@@ -117,7 +117,6 @@ namespace Jewelry.Win8.Phone.Demo
             Canvas.SetTop(round2, 150);
             Canvas.SetLeft(round2, 150);
 
-
             round1.ManipulationDelta += new EventHandler<ManipulationDeltaEventArgs>(OnManipulationDelta);
 
             round2.ManipulationDelta += new EventHandler<ManipulationDeltaEventArgs>(OnManipulationDelta1);
@@ -267,9 +266,7 @@ namespace Jewelry.Win8.Phone.Demo
             var image1 = new Image();
             image1.Stretch = Stretch.Fill;
             image1.Source = new BitmapImage(new Uri("/Document/nec1.png", UriKind.RelativeOrAbsolute));
-
             paint.Children.Remove(image1);
-
             image1.Width = PointX1 - PointX + ((PointX1 - PointX) / 8);
             Canvas.SetTop(image1, PointY);
             Canvas.SetLeft(image1, (PointX - ((PointX1 - PointX) / 15)));
@@ -323,8 +320,6 @@ namespace Jewelry.Win8.Phone.Demo
                         mediaLibrary.SavePicture("PictureJewelry" + i.ToString() + ".jpg", stream);
                     }
                 }
-                Image img = new Image();
-                paint.Children.Remove(img);
             }
             
             //MessageBox.Show("Picture Saved...");
