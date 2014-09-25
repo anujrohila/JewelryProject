@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document", "Document", "{D8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jewelry.Win8.Domain", "Jewelry.Win8.Domain\Jewelry.Win8.Domain.csproj", "{C550C43D-52AB-4A92-919B-AF0D1C402038}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jewelry.Win8.Phone.DAL", "Jewelry.Win8.Phone.DAL\Jewelry.Win8.Phone.DAL.csproj", "{329F0476-EAB9-4674-96A8-95F979F8D1B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,18 @@ Global
 		{C550C43D-52AB-4A92-919B-AF0D1C402038}.Release|ARM.Build.0 = Release|ARM
 		{C550C43D-52AB-4A92-919B-AF0D1C402038}.Release|x86.ActiveCfg = Release|x86
 		{C550C43D-52AB-4A92-919B-AF0D1C402038}.Release|x86.Build.0 = Release|x86
+		{329F0476-EAB9-4674-96A8-95F979F8D1B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{329F0476-EAB9-4674-96A8-95F979F8D1B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{329F0476-EAB9-4674-96A8-95F979F8D1B4}.Debug|ARM.ActiveCfg = Debug|ARM
+		{329F0476-EAB9-4674-96A8-95F979F8D1B4}.Debug|ARM.Build.0 = Debug|ARM
+		{329F0476-EAB9-4674-96A8-95F979F8D1B4}.Debug|x86.ActiveCfg = Debug|x86
+		{329F0476-EAB9-4674-96A8-95F979F8D1B4}.Debug|x86.Build.0 = Debug|x86
+		{329F0476-EAB9-4674-96A8-95F979F8D1B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{329F0476-EAB9-4674-96A8-95F979F8D1B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{329F0476-EAB9-4674-96A8-95F979F8D1B4}.Release|ARM.ActiveCfg = Release|ARM
+		{329F0476-EAB9-4674-96A8-95F979F8D1B4}.Release|ARM.Build.0 = Release|ARM
+		{329F0476-EAB9-4674-96A8-95F979F8D1B4}.Release|x86.ActiveCfg = Release|x86
+		{329F0476-EAB9-4674-96A8-95F979F8D1B4}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
