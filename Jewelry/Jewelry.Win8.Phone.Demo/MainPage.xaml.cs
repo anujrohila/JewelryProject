@@ -13,6 +13,9 @@ using System.Windows.Shapes;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 using Jewelry.Win8.Phone.Demo.Resources;
+using System.IO;
+using Microsoft.Xna.Framework.Media;
+using System.IO.IsolatedStorage;
 
 namespace Jewelry.Win8.Phone.Demo
 {
@@ -27,12 +30,10 @@ namespace Jewelry.Win8.Phone.Demo
             InitializeComponent();
             RemoveWhiteBack();
             Drawbox();
-            //transformGroup = new TransformGroup();
-            //translation = new TranslateTransform();
-            //scale = new ScaleTransform();
-            //transformGroup.Children.Add(scale);
-            //transformGroup.Children.Add(translation);
-            //myrect.RenderTransform = transformGroup;
+            MediaLibrary mediaLibrary = new MediaLibrary();
+            Picture img = mediaLibrary.Pictures.Where(pic => pic.Name.Contains("PictureJewelry")).FirstOrDefault();
+            //image1 = img.;
+            string s = "";
         }
 
         private void RemoveWhiteBack()
@@ -270,6 +271,49 @@ namespace Jewelry.Win8.Phone.Demo
             paint.Children.Add(image1);
             image1.ManipulationDelta += new EventHandler<ManipulationDeltaEventArgs>(OnManipulationDelta2);
 
+        }
+
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
+        {
+            WriteableBitmap wb = new WriteableBitmap(paint, null);
+
+            wb.Render(paint, new TranslateTransform());
+            wb.Invalidate();
+
+            using (MemoryStream stream = new MemoryStream())
+            {
+                WriteableBitmap bitmap = new WriteableBitmap(paint, null);
+                bitmap.SaveJpeg(stream, bitmap.PixelWidth, bitmap.PixelHeight, 0, 100);
+                stream.Seek(0, SeekOrigin.Begin);
+
+                using (MediaLibrary mediaLibrary = new MediaLibrary())
+                {
+                    mediaLibrary.SavePicture("PictureJewelry.jpg", stream);
+                }
+            }
+            //MessageBox.Show("Picture Saved...");
+            //Stream st = new MemoryStream();
+            //BitmapImage b = new BitmapImage();
+            //b.UriSource = new Uri("/asstes/34.png", UriKind.Relative);
+            //// encode writeablebitmap object to a jpeg stream.
+            //Extensions.SaveJpeg(wb, st, 200, 250, 0, 100);
+            //st.Close();
+
+
+
+            //Uri uri = new Uri("/Document/picture.jpg", UriKind.RelativeOrAbsolute);
+            //BitmapImage bit = new BitmapImage(uri);
+            //Stream stream = new MemoryStream();
+            //bit.SetSource(stream);
+            //Extensions.SaveJpeg(wb, stream, 200, 250, 0, 100);
+            //stream.Close();
+            //using (var isf = IsolatedStorageFile.GetUserStoreForApplication())
+            //{
+            //    using (var fs = isf.CreateFile("picture.jpg"))
+            //    {
+            //        wb.SaveJpeg(fs, wb.PixelWidth, wb.PixelHeight, 10, 100);
+            //    }
+            //}
         }
 
         //private TransformGroup transformGroup;

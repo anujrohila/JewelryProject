@@ -25,9 +25,14 @@
                 <CompositeTransform Rotation="-17.497"/>
             </Image.RenderTransform>
         </Image>-->
-        <Canvas x:Name="paint" Background="Gray"  Margin="0,0,0,138" >
-        </Canvas>
-        <Button x:Name="BtnClick" Content="Click !" Margin="100,658,55,10" Click="BtnClick_Click" />
+        <StackPanel>
+            <Canvas x:Name="paint" Background="Gray" Height="627"   >
+            </Canvas>
+            <Button x:Name="BtnClick" Content="Click !"  Click="BtnClick_Click" />
+            <Button x:Name="BtnSave" Content="Save !" Click="BtnSave_Click"  />
+        </StackPanel>
+
+
         <!--<Canvas x:Name="cnv" Margin="0,140,0,0">
             <Rectangle Canvas.Top="150" Canvas.Left="45" 
                Width="300" Height="40" x:Name="myrect" 
