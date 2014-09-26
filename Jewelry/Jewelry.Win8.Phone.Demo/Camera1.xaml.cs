@@ -9,6 +9,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Devices;
 using Microsoft.Xna.Framework.Media;
+using System.Windows.Input;
 
 namespace Jewelry.Win8.Phone.Demo
 {
@@ -57,7 +58,7 @@ namespace Jewelry.Win8.Phone.Demo
             });
         }
 
-        void viewfinder_Tapped(object sender, GestureEventArgs e)
+        void viewfinder_Tapped(object sender, Microsoft.Phone.Controls.GestureEventArgs e)
         {
             if (cam != null)
             {
